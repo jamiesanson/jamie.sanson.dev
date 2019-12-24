@@ -1,6 +1,6 @@
 {
-  "description": "<p>This blog was created using <a href=\"https://forestry.io/\" title=\"Forestry Link\">Forestry</a> &amp; <a href=\"https://gridsome.org/\" title=\"Gatsby Link\">Gridsome</a></p>",
-  "cta": "<p>To get started, import this site into Forestry or checkout the repository <a href=\"https://github.com/kendallstrautman/starter-blog-gatsby\" title=\"Repo Url\">here</a>.</p>",
+  "description": "<p>Ramblings on things in tech from your favourite app developer.</p><p>Jamie Sanson is the Android Technical lead at Trade Me. In his spare time he likes to build things - from apps, to mechanical keyboards, to brewing systems.</p>",
+  "cta": "<p>Get in contact via email, follow me on socials, or follow me on Github.</p>",
   "contact": {
     "email": "jamie@sanson.dev",
     "twitter_handle": "jam_san",
