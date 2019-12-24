@@ -1,7 +1,7 @@
 ---
 title: Building jamie.sanson.dev
 author: Jamie Sanson
-date: 2019-12-24T06:15:00Z
+date: 2019-12-24T06:15:00.000+00:00
 hero_image: "/src/assets/content/images/dallas-at-night-2332288.jpg"
 
 ---
@@ -42,7 +42,7 @@ Forestry not only allows you to create and edit attributes of your site, but it 
 Assembling the site couldn't be easier, using all the technologies above. It can be summarised like this:
 
 1. Grab yourself a domain
-2. Get your Github repo set up using Forestry
+2. Get your Github repo set up using a Forestry starter template
 3. Create a Netlify project
 4. Link your Netlify project to your custom domain by updating a DNS record
 
