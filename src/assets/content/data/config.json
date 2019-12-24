@@ -1,12 +1,11 @@
 {
-    "title": "Brevifolia",
-    "description": "Starter blog using Forestry CMS with Gridsome.",
-    "contact": {
-      "email": "info@forestry.io",
-      "twitter_handle": "forestryio",
-      "github_handle": "forestryio"
-    },
-    "primary_color": "#ACCAC5",
-    "repository_url": "https://github.com/kendallstrautman/starter-blog-gridsome"
-  }
-  
+  "title": "Jamie Sanson",
+  "description": "Ramblings about tech, from your favourite app developer.",
+  "contact": {
+    "email": "jamie@sanson.dev",
+    "twitter_handle": "jam_san",
+    "github_handle": "jamiesanson"
+  },
+  "primary_color": "#ACCAC5",
+  "repository_url": "https://github.com/jamiesanson/jamie.sanson.dev"
+}
