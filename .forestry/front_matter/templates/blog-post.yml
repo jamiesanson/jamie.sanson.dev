@@ -25,5 +25,6 @@ fields:
   name: hero_image
   label: hero_image
 pages:
+- src/assets/content/blog/android-pie-and-the-future-of-dependency-injection.md
 - src/assets/content/blog/building-jamie-sanson-dev.md
 - src/assets/content/blog/covert-swipe-actions-made-easy.md
