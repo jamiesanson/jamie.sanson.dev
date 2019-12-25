@@ -9,8 +9,10 @@ sections:
 - type: directory
   path: src/assets/content/blog
   label: Blog Posts
-  create: documents
+  create: all
   match: "**/*"
+  templates:
+  - blog-post
 - type: document
   path: src/assets/content/data/authors.json
   label: Authors List
