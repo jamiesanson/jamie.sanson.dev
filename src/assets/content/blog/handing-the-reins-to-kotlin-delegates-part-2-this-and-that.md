@@ -7,7 +7,7 @@ hero_image: "/src/assets/content/images/kotlin-delegates-hero-2.jpeg"
 ---
 In the [first entry of this series](https://jamie.sanson.dev/blog/handing-the-reins-to-kotlin-delegates-part-1-what-and-why/) we looked at Kotlin Property Delegation in its most basic form, the `ReadOnlyProperty` and `ReadWriteProperty`. These provide a simple way of us extracting getter and setter functions into a separate, portable class. As we saw in the last post, there are some things we haven’t used yet — the `thisRef`, and `property` parameters. In this article we’ll look at what we can do with these, and put them together into useful property delegates.
 
-# A closer look at `ReadWriteProperty`
+# A closer look at ReadWriteProperty
 
 Let’s first have a look at the definition of `ReadWriteProperty`, to get an idea of how these extra parameters come in to play.
 
