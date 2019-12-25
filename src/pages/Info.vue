@@ -1,5 +1,4 @@
 <template>
-    <Layout page="info">
         <section class="info__blurb">
                 <div v-html="data.description"></div>
                 <div v-html="data.cta"></div>
@@ -27,7 +26,6 @@
                 </li>
             </ul>
         </section>
-    </Layout>
 </template>
 
 <script>
@@ -42,7 +40,7 @@
       },
       computed: {
           data: function() {
-              return this.$page.metaData.infoData
+              return this.$page.metadata.infoData
           }
       }
     }
@@ -50,7 +48,7 @@
 
 <page-query>
     query getInfoPageData {
-        metaData {
+        metadata {
             infoData {
                 description
                 cta 

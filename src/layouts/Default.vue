@@ -1,8 +1,12 @@
 <template>
   <div class="layout">
-    <Header :page="page" />
+    <Header/>
     <div class="content">
-      <slot/>
+      <transition name="fade" appear>
+        <main> <!-- a wrapper for slot is needed -->
+          <slot /> <!-- the content -->
+        </main>
+      </transition>
     </div>
   </div>
 </template>
@@ -10,18 +14,11 @@
 <script>
 import Header from '~/components/Header.vue'
 
-    export default {
-        components: {
-            Header
-        }, 
-        props: {
-          page: {
-              type: String,
-              required: true
-          }
-        }, 
-        
+export default {
+    components: {
+        Header
     }
+}
 </script>
 
 <style>
@@ -38,7 +35,15 @@ import Header from '~/components/Header.vue'
   .content {
     flex-grow: 1;
   }
-    
+
+  .fade-enter-active {
+    transition: opacity .8s;
+  }
+
+  .fade-enter {
+    opacity: 0;
+  }
+      
   @media (min-width: 768px) {
     .layout {
       display: block;

@@ -2,7 +2,7 @@
     <header class="header">
         <nav class="nav">
             <g-link to="/" exact>
-                <h1>{{ $static.metaData.siteName }}</h1>
+                <h1>{{ $static.metadata.siteName }}</h1>
             </g-link>
             <div>
                 <h1>
@@ -17,29 +17,23 @@
 
 <script>
 export default {
-    props: {
-        page: {
-            type: String,
-            required: true
-        }
-    },
     computed: {
         isInfoPage() {
-            return this.page === "info" && true
+            return this.$route.path.startsWith("/info") && true
         },
         infoLink() {
             return this.isInfoPage ? "/" : "/info"
-        }, 
+        }
     }
 }
 </script>
 
 <static-query>
-    query {
-    metaData {
+query {
+    metadata {
         siteName
     }
-    }
+}
 </static-query>
 
 <style>
