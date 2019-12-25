@@ -1,7 +1,7 @@
 ---
 title: 'Handing the Reins to Kotlin Delegates — Part 2: This and that'
 author: Jamie Sanson
-date: 2019-08-15T10:00:00+12:00
+date: 2019-08-14T22:00:00.000+00:00
 hero_image: "/src/assets/content/images/kotlin-delegates-hero-2.jpeg"
 
 ---
@@ -156,4 +156,4 @@ This sample has been stripped down for demonstration purposes. A more fully-feat
 
 We now know everything there is to know about property delegation in Kotlin! We’ve explored all the different parameters which make up the getter and setter operator functions, and discovered how we can use them to create elegant and reusable solutions for an array of common problems.
 
-In [**Part 3: Fast builds, fast runtime. Pick two**](https://jamie.sanson.dev/blog/handing-the-reins-to-kotlin-delegates-part-3-fast-builds-fast-runtime-pick-two/). we’ll look at how far delegates can be taken when used in systems like Android, where we can use components at the application scope to do more than just local logic. We’ll then compare property delegation to what we previously would have used in Java. We’ll look at how property delegation can provide an alternative solution to things like Annotation Processing + Code Generation and Proxy classes, and do a comparison.
+In [**Part 3: Fast builds, fast runtime. Pick two**](/blog/handing-the-reins-to-kotlin-delegates-part-3-fast-builds-fast-runtime-pick-two/). we’ll look at how far delegates can be taken when used in systems like Android, where we can use components at the application scope to do more than just local logic. We’ll then compare property delegation to what we previously would have used in Java. We’ll look at how property delegation can provide an alternative solution to things like Annotation Processing + Code Generation and Proxy classes, and do a comparison.
