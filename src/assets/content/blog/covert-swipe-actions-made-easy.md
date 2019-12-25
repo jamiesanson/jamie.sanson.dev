@@ -7,9 +7,9 @@ hero_image: "/src/assets/content/images/iker-urteaga-GIXUMw8wsoc-unsplash.jpg"
 ---
 Have you ever wanted to implement swiping on your RecyclerView items, only to find that you’ll have to draw graphics on a canvas to reveal anything behind the view? The [Material Design Documentation website](https://material.io/design/) is full of beautiful mocks of interesting user experiences — more often than not however, these are just mocks. Covert takes the [Material Swipe Actions](https://material.io/design/interaction/gestures.html#types-of-gestures) mock, and builds it into an easily configurable library.
 
-| Material Components Demo | Covert |
-| :---: | :---: |
-|  |  |
+Material Components Demo   |  Covert
+:-------------------------:|:-------------------------:
+![](/src/assets/content/images/covert.gif)  |  ![](/src/assets/content/images/ceort2.gif)
 
 # Introducing [Covert](https://github.com/TradeMe/Covert)
 
