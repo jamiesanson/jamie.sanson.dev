@@ -72,6 +72,7 @@
         padding: 1.5rem 1.25rem;
         p {
             font-size: 1.4rem;
+            color: black;
         }
     }
 

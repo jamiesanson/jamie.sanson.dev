@@ -74,7 +74,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 1.5rem 1.25rem;
-      border-bottom: 1px solid #ebebeb;
+      border-bottom: 1px solid #EBEBEB;
       h2,
       h3,
       p {
@@ -101,7 +101,6 @@
     }
     p {
       max-width: 900px;
-      color: #464646;
     }
   }
   
