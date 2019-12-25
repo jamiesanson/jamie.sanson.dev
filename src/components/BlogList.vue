@@ -9,7 +9,8 @@
                           :alt="post.node.title" 
                           width="300" 
                           height="300" 
-                          quality="75">
+                          quality="75"
+                          immediate="true">
                         </g-image>
                     </div>
                     <div class="blogList__info">

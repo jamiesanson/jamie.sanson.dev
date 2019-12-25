@@ -8,6 +8,7 @@
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
+    "prod": "gridsome serve",
     "explore": "gridsome explore",
     "forestry-preview": "gridsome develop -p 8080 --host 0.0.0.0"
   },
