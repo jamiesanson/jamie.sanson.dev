@@ -23,7 +23,10 @@ module.exports = {
         resolveAbsolutePaths: true,
         remark: {
           externalLinksTarget: "_blank",
-          externalLinksRel: ["nofollow", "noopener", "noreferrer"]
+          externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+          plugins: [
+            "remark-highlight.js"
+          ]
         }
       }
     }

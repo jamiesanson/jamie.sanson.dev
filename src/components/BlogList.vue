@@ -9,7 +9,6 @@
                           :alt="post.node.title" 
                           width="300" 
                           height="300" 
-                          quality="75"
                           immediate="true">
                         </g-image>
                     </div>
