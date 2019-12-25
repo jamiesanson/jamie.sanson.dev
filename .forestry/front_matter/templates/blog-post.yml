@@ -26,3 +26,4 @@ fields:
   label: hero_image
 pages:
 - src/assets/content/blog/building-jamie-sanson-dev.md
+- src/assets/content/blog/code-formatting-test.md
