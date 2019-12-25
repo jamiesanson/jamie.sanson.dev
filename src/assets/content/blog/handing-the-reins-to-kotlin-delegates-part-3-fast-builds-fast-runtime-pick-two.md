@@ -8,7 +8,7 @@ hero_image: "/src/assets/content/images/kotlin-delegates-3-hero.jpeg"
 ---
 In the previous articles we’ve seen what property delegation is, how we can use it to separate concerns, and implement complex getting and setting functionality. This article takes a different approach, looking at a real world problem and evaluating a bunch of different solutions. In this article we’ll see how Property Delegation, in some cases, can be comparable to Dynamic Proxies and Annotation Processing + Code Generation.
 
-Configuring Android Apps
+# Configuring Android Apps
 
 One common component required for large Android applications is some form of application configuration. This allows developers and product owners to roll out or tweak features remotely, and measure user impact. One choice for configuration framework is Firebase Remote Config. It integrates nicely with Firebase A/B testing, giving those working on the app confidence that the features they’re deploying are performing well. It’s relatively easy to set up, but gets complicated as you scale to larger teams with more refined processes.
 
