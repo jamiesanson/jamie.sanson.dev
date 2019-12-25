@@ -42,17 +42,14 @@ export default {
     }
 </static-query>
 
-<style lang="scss">
-
-$border-color: #EBEBEB;
-
+<style>
 .header h1 {
     margin-bottom: 0; 
 }
   
 .nav {
     padding: 1.5rem 1.25rem;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -75,7 +72,7 @@ $border-color: #EBEBEB;
       padding: 2rem;
       width: 30vw;
       height: 100%;
-      border-right: 1px solid $border-color;
+      border-right: 1px solid var(--border-color);
       border-bottom: none;
       flex-direction: column;
       align-items: flex-start;

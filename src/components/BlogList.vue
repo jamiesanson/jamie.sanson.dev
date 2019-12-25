@@ -74,7 +74,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 1.5rem 1.25rem;
-      border-bottom: 1px solid #EBEBEB;
+      border-bottom: 1px solid var(--border-color);
       h2,
       h3,
       p {

@@ -23,9 +23,6 @@ ul {
 }
 
 //DARKMODE---------------------------------------
-// Border default color
-$border-color: rgb(177, 38, 38) !default;
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
@@ -36,7 +33,9 @@ $border-color: rgb(177, 38, 38) !default;
     color: #A0A0A0;
   }
 
-  $border-color: #464646;
+  :root {
+    --border-color: #464646;
+  }
 }
 @media (prefers-color-scheme: light) {
   body {
@@ -48,7 +47,9 @@ $border-color: rgb(177, 38, 38) !default;
     color: #464646;
   }
 
-  $border-color: #EBEBEB;
+  :root {
+    --border-color: #EBEBEB;
+  }
 }
 
 //TYPOGRAPHY-------------------------------------
