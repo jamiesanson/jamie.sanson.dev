@@ -1,7 +1,7 @@
 ---
 title: App Links in a multi-app ecosystem
 author: Jamie Sanson
-date: 2019-04-02T00:00:00+13:00
+date: 2019-04-02T10:00:00+13:00
 hero_image: "/src/assets/content/images/app-links.jpeg"
 
 ---
