@@ -17,9 +17,42 @@ Put simply, we use dependency injection to help provide instances of “dependen
 
 To set this up, we need to provide our repository. We’ll define a `Provides` function in a module, allowing Dagger to know this is the instance we want injected. Note, our repository needs a context instance to do things with files and network. We’ll provide it the application context.
 
+    @Module
+    class AppModule(val appContext: Context) {
+      
+      @Provides
+      @ApplicationScope
+      fun provideApplicationContext(): Context = appContext
+      
+      @Provides
+      @ApplicationScope
+      fun provideRepository(context: Context): Repository = Repository(context)
+    }
+
 We now need to define a `Component` to handle injection of the classes we want our `Repository` to be used in.
 
+    @ApplicationScope
+    @Component(modules = [AppModule::class])
+    interface ApplicationComponent {
+        
+      fun inject(activity: MainActivity)
+    }
+
 Finally, we can set up our `Activity` to make use of our repository. We’ll assume we’ve set up an instance of our `ApplicationComponent` somewhere else.
+
+    class MainActivity: AppCompatActivity() {
+     
+      @Inject 
+      lateinit var repository: Repository
+      
+      override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Inject our repository
+        application.applicationComponent.inject(this) 
+        
+        // We can use our repository from here on
+      }
+    }
 
 That’s it! We’ve just set up application-scoped dependency injection using Dagger. There’s a number of different ways that this could be done, however this seems the most simple approach.
 
@@ -43,7 +76,27 @@ This is intriguing. “Manifest elements” here refers to classes we list in ou
 
 Let’s dive on in. We’ll start by extending [`AppComponentFactory`](https://developer.android.com/reference/android/app/AppComponentFactory) and overriding the `instantiateActivity` method.
 
+    class InjectionComponentFactory: AppComponentFactory() {
+      
+      private val repository = NonContextRepository()
+    
+      override fun instantiateActivity(cl: ClassLoader, className: String, intent: Intent?): Activity {
+        return when {
+          className == MainActivity::class.java.name -> MainActivity(repository)
+          else -> super.instantiateActivity(cl, className, intent)
+        }
+      }
+    }
+
 Now we need to declare our component factory in the manifest within the application tag.
+
+    <application android:allowBackup="true"
+                 android:label="@string/app_name"
+                 android:icon="@mipmap/ic_launcher"
+                 android:name=".InjectionApp"
+                 android:appComponentFactory="nz.co.trademe.injectiontest.component.InjectionComponentFactory"
+                 android:theme="@style/AppTheme"
+                 tools:replace="android:appComponentFactory">
 
 From here we can launch our app, and it’s worked! Our `NonContextRepository` is provided via the constructor of the MainActivity. Neat. Note, this does have some caveats. We can’t use `Context` instances here, as our instantiate functions are being called before context exists — confusing! We can go further to constructor inject our Application class, but lets move on to see how Dagger can make this even easier.
 
@@ -53,19 +106,90 @@ I won’t go in to how Dagger multi-binding works under the hood, as that’ll t
 
 Let’s set up our Activity first, to see where we’re headed.
 
+    class MainActivity @Inject constructor(
+      private val repository: NonContextRepository
+    ): Activity() {
+    
+      override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // We can use our repository here
+      }
+    }
+
 From this you can see immediately there’s almost _no_ mention of dependency injection. The only thing we see appear is `Inject` annotation on the constructor.
 
 Our Dagger Component and Module now need to change.
 
+    @Component(modules = [ApplicationModule::class])
+    interface ApplicationComponent {
+    
+        fun inject(factory: InjectionComponentFactory)
+    }
+
+    @Module(includes = [ComponentModule::class])
+    class ApplicationModule {
+      
+      @Provides
+      fun provideRepository(): NonContextRepository = NonContextRepository()
+    }
+
 Nothing much has changed. We now only need to inject our component factory, but how do we instantiate our manifest elements? This is where `ComponentModule` comes in. Let’s take a look.
 
+    @Module
+    abstract class ComponentModule {
+    
+        @Binds
+        @IntoMap
+        @ComponentKey(MainActivity::class)
+        abstract fun bindMainActivity(activity: MainActivity): Any
+    
+        @Binds
+        abstract fun bindComponentHelper(componentHelper: ComponentHelper): ComponentInstanceHelper
+    }
+    
+    @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
+    @Retention(AnnotationRetention.RUNTIME)
+    @MapKey
+    internal annotation class ComponentKey(val clazz: KClass<out Any>
+
 Woah, those are some annotations alright. What we’re doing here is binding our activity into a map, injecting that map into our `ComponentHelper` class, and providing that `ComponentHelper` — all in two `Binds` statements. Dagger knows how to create an instance of our `MainActivity` thanks to the `Inject` annotation so can “bind” a provider for this class, providing the dependencies we need to the constructor automatically. Our `ComponentHelper` looks like this.
+
+    class ComponentHelper @Inject constructor(
+      private val creators: Map<Class<out Any>, @JvmSuppressWildcards Provider<Any>>
+    ): ComponentInstanceHelper {
+    
+      @Suppress("UNCHECKED_CAST")
+      override fun <T> resolve(className: String): T? =
+        creators
+          .filter { it.key.name == className }
+          .values
+          .firstOrNull()
+          ?.get() as? T
+    }
+    
+    interface InstanceComponentHelper {
+      fun <T> resolve(className: String): T?
+    }
 
 Put simply, we now have a map of classes to providers for those classes. When we try to resolve a class by name, we simply find the provider for that class (if we have it), call it to get a new instance of that class, and return it.
 
 Finally, we need to make a change to our [`AppComponentFactory`](https://developer.android.com/reference/android/app/AppComponentFactory) to use our new helper class.
 
-<script src="[https://gist.github.com/jamiesanson/2672ff0365be6c2d8d014f26dcee582e.js](https://gist.github.com/jamiesanson/2672ff0365be6c2d8d014f26dcee582e.js "https://gist.github.com/jamiesanson/2672ff0365be6c2d8d014f26dcee582e.js")"></script>
+    class InjectionComponentFactory: AppComponentFactory() {
+    
+      @Inject
+      lateinit var componentHelper: ComponentInstanceHelper
+    
+      init {
+        DaggerApplicationComponent.create().inject(this)
+      }
+    
+      override fun instantiateActivity(cl: ClassLoader, className: String, intent: Intent?): Activity {
+        return componentHelper
+            .resolve<Activity>(className)
+            ?.apply { setIntent(intent) } ?: super.instantiateActivity(cl, className, intent)
+      }
+    }
 
 Run the code again, and it all works! Neat.
 
