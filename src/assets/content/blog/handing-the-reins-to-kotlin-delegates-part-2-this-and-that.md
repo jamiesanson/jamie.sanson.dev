@@ -54,7 +54,7 @@ Let’s build a simple delegate which leverages the `R` type parameter in the co
         private var resolvedString: String? = null
     
         override fun getValue(thisRef: AppCompatActivity, property: KProperty<*>): String =
-        resolvedString ?: thisRef.getString(stringId).also { resolvedString = it }
+        	resolvedString ?: thisRef.getString(stringId).also { resolvedString = it }
     }
 
 We can define an extension function to make it more idiomatic. Think about Kotlin’s `lazy` delegate function for another example of this.
