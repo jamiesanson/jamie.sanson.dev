@@ -68,42 +68,56 @@ We now no longer have to override `onDestroyView`, and we've decreased the numbe
 
 Let's look at a trimmed down definition of `viewLifecycle()`:
 
-    fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> = 
-        object: ReadWriteProperty<Fragment, T>, LifecycleObserver {
-        
-            // A backing property to hold our value
-        	private var _binding: T? = null
+    fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> =
+            object: ReadWriteProperty<Fragment, T>, LifecycleObserver {
     
-            init {
-                // Observe the View Lifecycle of the Fragment
-                this@viewLifecycle
-                    .viewLifecyleOwner
-                    .lifecycle
-                    .addObserver(this)
+                // A backing property to hold our value
+                private var binding: T? = null
+                
+                // The current LifecycleOwner
+                private var viewLifecycleOwner: LifecycleOwner? = null
+                
+                init {
+                    // Observe the View LifecycleOwner, then observe the new lifecycle
+                    this@viewLifecycle
+                        .viewLifecycleOwnerLiveData
+                        .observe(this@viewLifecycle, Observer { newLifecycleOwner -> 
+                            viewLifecycleOwner?.lifecycle?.removeObserver(this)
+                            viewLifecycleOwner = newLifecycleOwner.also { 
+                                it.lifecycle.addObserver(this)
+                            }
+                    })
+                }
+                
+                @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+                fun onDestroy(event: Lifecycle.Event) {
+                    // Clear out backing property just before onDestroyView
+                    binding = null
+                }
+                
+                override fun getValue(
+                    thisRef: Fragment,
+                    property: KProperty<*>
+                ): T {
+                    // Return the backing property if it's set
+                    return this.binding!!
+                }
+                override fun setValue(
+                    thisRef: Fragment,
+                    property: KProperty<*>,
+                    value: T
+                ) {
+                    // Set the backing property
+                    this.binding = value
+                }
             }
-    
-            @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-            fun onDestroy(event: Lifecycle.Event) {
-                // Clear out backing property just before onDestroyView
-            	property = null
-            }
-    
-            override fun getValue(thisRef: Any, property: KProperty<*>): T {
-                // Return the backing property if it's set, or throw an exception
-                return this._binding ?: throw IllegalStateException("${property.name} not set")
-            }
-    
-            override fun setValue(thisRef: Any, property: KProperty<*>, value: T) {
-                // Set the backing property
-                this._binding = value
-            }
-        }
 
 Wow, there's a lot going on there. Let's break it down.
 
 * `viewLifecycle()` is an extension function of `Fragment`, meaning we can use `Fragment`-related properties.
 * `viewLifecycle()` returns a `ReadWriteProperty<Fragment, T>`, an implementation of a property of a Fragment, which is of the generic type `T`.
 * We construct an anonymous class which implements `ReadWriteProperty` and `LifecycleObserver`, allowing us to listen to Lifecycle Events.
-* Finally, in the `init` block, we observe the `viewLifecycleOwner`s Lifecycle. On the `ON_DESTROY` event sent when `onDestroyView` is about to be called, we null out our backing property.
+* In the `init` block, we observe the Fragments `viewLifecycleOwner`. This is due to the fact that the Fragments view may go through multiple different lifecycles, being destroyed and re-created multiple times.
+* Finally, when the View's Lifecycle Owner changes, we observe the new Lifecycle. On the `ON_DESTROY` event sent when `onDestroyView` is about to be called, we null out our backing property.
 
-This gives us the same behaviour as in the View Binding Documentation, but with much less code to cart around in our Fragments! You can find a full, more generic example in this [Gist](https://gist.github.com/jamiesanson/d1a3ed0910cd605e928572ce245bafc4).
+This gives us the same behaviour as in the View Binding Documentation, but with much less code to cart around in our Fragments! You can find a full example in this [Gist](https://gist.github.com/jamiesanson/d1a3ed0910cd605e928572ce245bafc4). For more information around Kotlin Delegated Properties, have a read of my ["Handing the Reins to Kotlin Delegates"]() blog series!
