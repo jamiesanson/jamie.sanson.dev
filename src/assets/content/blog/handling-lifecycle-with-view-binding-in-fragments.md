@@ -1,7 +1,7 @@
 ---
 title: Handling Lifecycle with View Binding in Fragments
 author: Jamie Sanson
-date: 2020-01-15T00:00:00+13:00
+date: 2020-01-15T15:30:00+13:00
 hero_image: "/src/assets/content/images/close-up-environment-flora-ground-1151418.jpg"
 
 ---
