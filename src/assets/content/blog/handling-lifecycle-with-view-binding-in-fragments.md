@@ -90,7 +90,7 @@ Let's look at a trimmed down definition of `viewLifecycle()`:
                 }
                 
                 @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-                fun onDestroy(event: Lifecycle.Event) {
+                fun onDestroy() {
                     // Clear out backing property just before onDestroyView
                     binding = null
                 }
