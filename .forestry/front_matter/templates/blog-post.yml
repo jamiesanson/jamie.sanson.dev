@@ -33,4 +33,5 @@ pages:
 - src/assets/content/blog/handing-the-reins-to-kotlin-delegates-part-2-this-and-that.md
 - src/assets/content/blog/handing-the-reins-to-kotlin-delegates-part-3-fast-builds-fast-runtime-pick-two.md
 - src/assets/content/blog/handling-a-modern-day-y2k.md
+- src/assets/content/blog/handling-lifecycle-with-view-binding-in-fragments.md
 - src/assets/content/blog/konfigure-better-app-configuration-using-kotlin.md
