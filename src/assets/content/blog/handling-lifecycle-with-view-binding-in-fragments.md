@@ -34,7 +34,7 @@ Using this binding in a Fragment takes one more step - inflating it in `onCreate
         return view
     }
 
-On line 6 we're storing our binding class in a property so that we can access it later. As it turns out, due to the lifecycle of Fragment Views, this isn't all we have to do. 
+On line 6 we're storing our binding class in a property so that we can access it later. As it turns out, due to the lifecycle of Fragment Views, this isn't all we have to do.
 
 # Keeping Track of Lifecycle
 
@@ -75,7 +75,7 @@ Let's look at a trimmed down definition of `viewLifecycle()`:
         	private var _binding: T? = null
     
             init {
-                // Observe the ViewLifecycle of the Fragment
+                // Observe the View Lifecycle of the Fragment
                 this@viewLifecycle
                     .viewLifecyleOwner
                     .lifecycle
@@ -104,6 +104,6 @@ Wow, there's a lot going on there. Let's break it down.
 * `viewLifecycle()` is an extension function of `Fragment`, meaning we can use `Fragment`-related properties.
 * `viewLifecycle()` returns a `ReadWriteProperty<Fragment, T>`, an implementation of a property of a Fragment, which is of the generic type `T`.
 * We construct an anonymous class which implements `ReadWriteProperty` and `LifecycleObserver`, allowing us to listen to Lifecycle Events.
-* Finally, in the `init` block, we observe the `viewLifecycleOwner`s Lifecycle. On the `ON_DESTROY` event sent when `onDestroyView` is about to be called, we null out our backing property. 
+* Finally, in the `init` block, we observe the `viewLifecycleOwner`s Lifecycle. On the `ON_DESTROY` event sent when `onDestroyView` is about to be called, we null out our backing property.
 
 This gives us the same behaviour as in the View Binding Documentation, but with much less code to cart around in our Fragments! You can find a full, more generic example in this [Gist](https://gist.github.com/jamiesanson/d1a3ed0910cd605e928572ce245bafc4).
