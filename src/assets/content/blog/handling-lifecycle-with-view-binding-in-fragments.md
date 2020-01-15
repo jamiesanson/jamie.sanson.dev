@@ -2,7 +2,7 @@
 title: Handling Lifecycle with View Binding in Fragments
 author: Jamie Sanson
 date: 2020-01-15T00:00:00+13:00
-hero_image: ''
+hero_image: "/src/assets/content/images/close-up-environment-flora-ground-1151418.jpg"
 
 ---
 [View Binding](https://developer.android.com/topic/libraries/view-binding "View Binding Documentation") is an upcoming feature in Android, available in Android Studio 3.6 Canary 11+ which allows you to more easily interact with Views. It's quick and easy to enable, and allows for type-safe view access. We're likely all going to be using it in Fragments. Let's explore how we can use it, in a safe and easy way!
