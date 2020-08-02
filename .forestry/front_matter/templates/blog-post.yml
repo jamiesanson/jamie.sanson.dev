@@ -35,3 +35,4 @@ pages:
 - src/assets/content/blog/handling-a-modern-day-y2k.md
 - src/assets/content/blog/handling-lifecycle-with-view-binding-in-fragments.md
 - src/assets/content/blog/konfigure-better-app-configuration-using-kotlin.md
+- src/assets/content/blog/presentation-kotlin-101.md
