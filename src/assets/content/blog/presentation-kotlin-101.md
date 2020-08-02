@@ -9,6 +9,4 @@ On the 30th of July, in collaboration with Summer of Tech and GDG Wellington I p
 
 You can find the slides for the presentation below.
 
-<iframe src="https://www.icloud.com/keynote/032ENNyi4PWLrjc8oUUJkZmNQ#Kotlin_101" style="width:100%; height:600px;"
-
-> </iframe>
+<iframe src="https://www.icloud.com/keynote/032ENNyi4PWLrjc8oUUJkZmNQ?embed=true" width="640" height="500" frameborder="0" allowfullscreen="1" referrer="no-referrer"></iframe>
