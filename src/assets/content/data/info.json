@@ -1,9 +1,9 @@
 {
-  "description": "<p>Ramblings on things in tech from your favourite app developer.</p><p>Jamie Sanson is the Android Technical lead at Trade Me. In his spare time he likes to build things - from apps, to mechanical keyboards, to brewing systems.</p>",
+  "description": "<p>Ramblings on things in tech from your favourite app developer.</p><p>Jamie Sanson is a Principal Software Engineer, with a focus on Android at Trade Me. In his spare time he likes to build things - from apps, to mechanical keyboards, to brewing systems.</p>",
   "cta": "<p>Get in contact via email, follow me on socials, or follow me on Github.</p>",
   "contact": {
     "email": "jamie@sanson.dev",
-    "twitter_handle": "jam_san",
+    "twitter_handle": "jamiesanson",
     "github_handle": "jamiesanson"
   },
   "background_color": "#DCEDC8",
