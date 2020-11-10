@@ -26,6 +26,7 @@ fields:
   label: hero_image
 pages:
 - src/assets/content/blog/android-pie-and-the-future-of-dependency-injection.md
+- src/assets/content/blog/android-then-and-now-intro-intdef-enums.md
 - src/assets/content/blog/app-links-in-a-multi-app-ecosystem.md
 - src/assets/content/blog/building-jamie-sanson-dev.md
 - src/assets/content/blog/covert-swipe-actions-made-easy.md
