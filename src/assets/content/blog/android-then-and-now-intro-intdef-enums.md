@@ -5,11 +5,13 @@ date: 2020-11-10T00:00:00+13:00
 hero_image: "/src/assets/content/images/possessed-photography-tojix_nyzfo-unsplash.jpg"
 
 ---
-Earlier this week I mentioned to a colleague that for the longest time Google didn’t recommend using `enum`s in Android Development. I’ve been an Android Developer for 5 years and didn’t think much of it, but to this fact is apparently pretty mind-boggling. This got me thinking, what else has changed over the years? As it turns out, modern Android development is very different to Android development of old.
+# Android Then and Now: Intro, @IntDef & Enums
 
-Join me for a series of byte-sized blog posts where we look at Android Then and Now. We’ll go through bits and pieces of Android development that have changed, and look at why and how they are what they are today in less than five minutes of reading. We’ll cover things like layouts, dependency management, background work, camera usage and much more.
+Earlier this week I mentioned to a colleague that for the longest time `enum`s were discouraged in Android Development. To developers new to Android this fact is apparently pretty mind-boggling  —  just look at the code we write today with Kotlin! Android development has changed a lot over the years, and looking back at things like enums shows just how far [Modern Android Development](https://www.youtube.com/watch?v=PB-hZVTScUg) has come.
 
-We’re starting the series off with a bang by looking at `enum`s, and why they were so highly discouraged.
+Join me in this series of byte-sized blog posts where we look at Android Then and Now. We'll go through bits and pieces of Android development that have changed, and look at why and how they are what they are today in less than five minutes of reading. We'll cover things like layouts, dependency management, background work, camera usage, navigation and much more!
+
+## Let's start the series off with a bang by looking at `enum`s, and why they were so highly discouraged back in the day.
 
 ## Back then, memory was tight
 
@@ -21,7 +23,7 @@ Memory was a sought after resource. We all wanted to be good mobile citizens and
 
 ## Enums are classes, and classes consume memory
 
-The main issue with enums is that they’re classes under the hood, and classes have overhead. If you’ve got 5 minutes to spare and want to know exactly how bad this can be, I’d recommend looking back at [The Price of Enums](https://www.youtube.com/watch?v=Hzs6OBcvNQE) from back in 2015. For a TL;DW: enums consume about 13x more dex (Dalvik Executable) memory space than standard integer constants, with additional runtime allocation overhead from an array maintained under the hood to keep track of values.
+The main issue with enums is that they’re classes under the hood, and classes have overhead. If you’ve got 5 minutes to spare and want to know exactly how bad this can be, I’d recommend looking back at [The Price of Enums](https://www.youtube.com/watch?v=Hzs6OBcvNQE) from back in 2015. TL;DW: enums consume about 13x more dex (Dalvik Executable) memory space than standard integer constants, with additional runtime allocation overhead from an array maintained under the hood to keep track of values.
 
 For example, this definition sets you back just over 1.6KB in dex space:
 
@@ -41,11 +43,11 @@ public static final int VALUE2 = 2;
 public static final int VALUE3 = 3;
 ```
 
-As you can imagine, apps which make extensive use of enums could quite easily blow up in memory usage. This puts pressure on the system, meaning these apps are more likely to be killed.
+As you can imagine, apps which make extensive use of enums could quite easily blow up in memory usage. This puts pressure on the system, causing the system to kill apps and tanking device performance.
 
 ## Introducing @IntDef, turning enums into ints
 
-So we’ve seen enums are bad, and ints are good. The Android team ran with this, and implemented tooling to help developers make use of ints over enum. This took the form of the `@IntDef` annotation and accompanying lint rules. Using these we’ll extend our integer example from above like so, giving us (mostly) the same build time constant-group benefits without the memory overhead!
+So we’ve seen enums are bad, and ints are good. The Android team ran with this, and implemented tooling to help developers make use of `int`s over `enum`. This took the form of the `@IntDef` annotation and accompanying lint rules. Using these we’ll extend our integer example from above like so, giving us (mostly) the same build time constant-group benefits without the memory overhead!
 
 ```java
 // We define our set of ints in the @IntDef annotation,
@@ -69,7 +71,7 @@ Oh and also in some circumstances [R8](https://developer.android.com/studio/buil
 
 ## Android Now: Just use enums already
 
-There have been quite a number of improvements to Android ecosystem over the past 5 years. ART (the Android RunTime) has improved, allowing dex space usage to shrink considerably. Additionally, the average amount of RAM available on devices has shot up considerably as device manufacturers move to cater for more performance-hungry apps. Some devices are now firmly in laptop territory, with the Galaxy S20 Ultra packing 16GB of RAM.
+There have been quite a number of improvements to Android ecosystem over the past 5 years. ART (the _A_ndroid _R_un_T_ime) has improved, allowing dex space usage to shrink considerably. The average amount of RAM available on devices has shot up considerably as device manufacturers move to cater for more performance-hungry apps. Some devices are now firmly in laptop territory, with recent devices packing up to 16GB of RAM.
 
 The official guidance stating not to use enums no longer exists. Use enums whenever you want! They’re a much nicer abstraction than `@IntDef` allows and devices now have silly amounts of memory, so they don’t mind. If you want to know more about how ART has helped things further, Chet Haase has a great segment in a [this talk from Google I/O 2018](https://youtu.be/IrMw7MEgADk?t=608) talking about runtime improvements.
 
@@ -77,6 +79,6 @@ All in all, memory usage is something most apps no longer have to pay too much a
 
 ***
 
-I hope you enjoyed the first instalment of Android Then and Now! I’ve got a backlog of topics, and I’ll be sticking to a cadence of roughly once a week. If there’s any weird old Android thing you remember, reach out and I’ll cover it!
+I hope you enjoyed the first instalment of Android Then and Now! I’ve got a backlog of topics, and I’ll be sticking to a cadence of roughly once a week.
 
-If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
+Next week, we'll be taking a look at navigation. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
