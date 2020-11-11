@@ -11,7 +11,7 @@ Earlier this week I mentioned to a colleague that for the longest time `enum`s w
 
 Join me in this series of byte-sized blog posts where we look at Android Then and Now. We'll go through bits and pieces of Android development that have changed, and look at why and how they are what they are today in less than five minutes of reading. We'll cover things like layouts, dependency management, background work, camera usage, navigation and much more!
 
-## Let's start the series off with a bang by looking at `enum`s, and why they were so highly discouraged back in the day.
+Let's start the series off with a bang by looking at `enum`s, and why they were so highly discouraged back in the day.
 
 ## Back then, memory was tight
 
