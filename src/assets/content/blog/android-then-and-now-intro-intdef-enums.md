@@ -5,8 +5,6 @@ date: 2020-11-10T00:00:00+13:00
 hero_image: "/src/assets/content/images/possessed-photography-tojix_nyzfo-unsplash.jpg"
 
 ---
-# Android Then and Now: Intro, @IntDef & Enums
-
 Earlier this week I mentioned to a colleague that for the longest time `enum`s were discouraged in Android Development. To developers new to Android this fact is apparently pretty mind-boggling  —  just look at the code we write today with Kotlin! Android development has changed a lot over the years, and looking back at things like enums shows just how far [Modern Android Development](https://www.youtube.com/watch?v=PB-hZVTScUg) has come.
 
 Join me in this series of byte-sized blog posts where we look at Android Then and Now. We'll go through bits and pieces of Android development that have changed, and look at why and how they are what they are today in less than five minutes of reading. We'll cover things like layouts, dependency management, background work, camera usage, navigation and much more!
