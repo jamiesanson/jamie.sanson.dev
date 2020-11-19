@@ -79,4 +79,4 @@ All in all, memory usage is something most apps no longer have to pay too much a
 
 I hope you enjoyed the first instalment of Android Then and Now! I’ve got a backlog of topics, and I’ll be sticking to a cadence of roughly once a week.
 
-Next week, we'll be taking a look at navigation. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
+Next week, we'll be taking a look at callbacks. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
