@@ -26,6 +26,7 @@ fields:
   label: hero_image
 pages:
 - src/assets/content/blog/android-pie-and-the-future-of-dependency-injection.md
+- src/assets/content/blog/android-then-and-n-caught-exception-nullpointerexception.md
 - src/assets/content/blog/android-then-and-now-callbacks.md
 - src/assets/content/blog/android-then-and-now-intro-intdef-enums.md
 - src/assets/content/blog/android-then-and-now-navigation.md
