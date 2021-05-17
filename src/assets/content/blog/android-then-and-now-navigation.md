@@ -1,7 +1,7 @@
 ---
 title: 'Android Then and Now: Navigation'
 author: Jamie Sanson
-date: 2021-01-28T00:00:00+13:00
+date: 2021-01-28T00:00:00.000+13:00
 hero_image: "/src/assets/content/images/compass-3408928_1920.jpg"
 
 ---
@@ -45,7 +45,13 @@ Build Android apps has changed dramatically since the days of Android 1.X, and h
 
 What’s next? Will Compose take off, and we entirely forget about the View system? Can we go deeper than single-View? Who knows.
 
-—
+***
+
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) 
+2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/) 
+3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/) <--- you are here!
+4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/)
+
 I hope you enjoyed this belated third instalment of Android Then and Now! **Next time:-; Caught exception: NullPointerException**.
 
 If you want to see more, follow me on Medium. Alternatively, I’ll be cross posting to my own personal blog and announcing each instalment on Twitter
