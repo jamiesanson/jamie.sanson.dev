@@ -1,7 +1,7 @@
 ---
 title: 'Android Then and Now: Intro, @IntDef & Enums'
 author: Jamie Sanson
-date: 2020-11-10T00:00:00+13:00
+date: 2020-11-10T00:00:00.000+13:00
 hero_image: "/src/assets/content/images/possessed-photography-tojix_nyzfo-unsplash.jpg"
 
 ---
@@ -17,7 +17,7 @@ The title of this section really sums up why enums were frowned upon. We’re sk
 
 In the early days, mobile devices were constrained hardware-wise. Most people kept hold of a phone for a year or two, meaning in 2015 one of the most popular devices in New Zealand was the Samsung Galaxy S3. This device was really one of the big drivers of Android in the early days, delivering incredible performance on Android 4.X with… 1GB of RAM. As it turns out, 1GB of RAM doesn’t leave much free when considering the overhead of running an OS, as well as multiple apps.
 
-Memory was a sought after resource. We all wanted to be good mobile citizens and to be app that people kill last. The focus therefore had to be on app memory consumption.
+Memory was a sought after resource. We all wanted to be good mobile citizens and to be the app that people kill last. The focus therefore had to be on app memory consumption.
 
 ## Enums are classes, and classes consume memory
 
@@ -69,7 +69,7 @@ Oh and also in some circumstances [R8](https://developer.android.com/studio/buil
 
 ## Android Now: Just use enums already
 
-There have been quite a number of improvements to Android ecosystem over the past 5 years. ART (the _A_ndroid _R_un_T_ime) has improved, allowing dex space usage to shrink considerably. The average amount of RAM available on devices has shot up considerably as device manufacturers move to cater for more performance-hungry apps. Some devices are now firmly in laptop territory, with recent devices packing up to 16GB of RAM.
+There have been quite a number of improvements to Android ecosystem over the past 5 years. ART (the **A**ndroid **R**un**T**ime) has improved, allowing dex space usage to shrink considerably. The average amount of RAM available on devices has shot up considerably as device manufacturers move to cater for more memory-hungry apps. Some devices are now firmly in laptop territory, with recent devices packing up to 16GB of RAM.
 
 The official guidance stating not to use enums no longer exists. Use enums whenever you want! They’re a much nicer abstraction than `@IntDef` allows and devices now have silly amounts of memory, so they don’t mind. If you want to know more about how ART has helped things further, Chet Haase has a great segment in a [this talk from Google I/O 2018](https://youtu.be/IrMw7MEgADk?t=608) talking about runtime improvements.
 
@@ -77,6 +77,11 @@ All in all, memory usage is something most apps no longer have to pay too much a
 
 ***
 
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) <--- you are here!
+2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/)
+3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/)
+4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/)
+
 I hope you enjoyed the first instalment of Android Then and Now! I’ve got a backlog of topics, and I’ll be sticking to a cadence of roughly once a week.
 
-Next week, we'll be taking a look at callbacks. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
+If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
