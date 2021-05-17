@@ -101,9 +101,11 @@ And thus, as Kotlin became more widely adopted in Android development,  NullPoin
 
 ***
 
+### Further reading
+
 1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/)
 2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/)
-3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/) 
+3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/)
 4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/) <--- you are here!
 
 I hope you enjoyed the second instalment of Android Then and Now! Next week: Navigation. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
