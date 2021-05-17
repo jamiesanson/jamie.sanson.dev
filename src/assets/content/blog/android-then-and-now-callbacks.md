@@ -1,7 +1,7 @@
 ---
 title: 'Android Then and Now: Callbacks'
 author: Jamie Sanson
-date: 2020-11-20T00:00:00+13:00
+date: 2020-11-20T00:00:00.000+13:00
 hero_image: "/src/assets/content/images/elena-koycheva-bgeupv246bm-unsplash.jpg"
 
 ---
@@ -74,5 +74,10 @@ What was two callbacks is now either a result, or an exception. We’ve gone fro
 Converting callbacks to suspend funs is easy, and [Roman Elizarov does a great job at explaining you how](https://medium.com/@elizarov/callbacks-and-kotlin-flows-2b53aa2525cf). He even goes further, to show how you can replace multi-shot callbacks with other coroutines primitives!
 
 ***
+
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) 
+2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/) <--- you are here!
+3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/)
+4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/)
 
 I hope you enjoyed the second instalment of Android Then and Now! Next week: Navigation. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
