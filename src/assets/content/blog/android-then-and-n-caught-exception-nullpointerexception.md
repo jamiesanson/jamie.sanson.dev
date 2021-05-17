@@ -1,7 +1,7 @@
 ---
 title: 'Android Then and N-; Caught exception: NullPointerException'
 author: Jamie Sanson
-date: 2021-04-30T00:00:00+12:00
+date: 2021-04-30T00:00:00.000+12:00
 hero_image: "/src/assets/content/images/question-mark-2492009_1920-1.jpg"
 
 ---
@@ -100,5 +100,10 @@ val myString2: String = null
 And thus, as Kotlin became more widely adopted in Android development,  NullPointerExceptions became a thing of the past. Instead of crashing for consumers of our apps, our apps don’t compile - shifting errors left, and causing us to think more about how we model optionality.
 
 ***
+
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/)
+2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/)
+3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/) 
+4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/) <--- you are here!
 
 I hope you enjoyed the second instalment of Android Then and Now! Next week: Navigation. If you want to see more, follow me on [Medium](https://medium.com/@jamiesanson). Alternatively, I’ll be cross posting to my [own personal blog](https://jamie.sanson.dev) and announcing each instalment on [Twitter](https://twitter.com/jamiesanson)
