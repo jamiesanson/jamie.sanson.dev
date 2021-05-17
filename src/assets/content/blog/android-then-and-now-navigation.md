@@ -47,8 +47,10 @@ What’s next? Will Compose take off, and we entirely forget about the View syst
 
 ***
 
-1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) 
-2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/) 
+### Further reading
+
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/)
+2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/)
 3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/) <--- you are here!
 4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/)
 
