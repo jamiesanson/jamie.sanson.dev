@@ -75,7 +75,9 @@ Converting callbacks to suspend funs is easy, and [Roman Elizarov does a great j
 
 ***
 
-1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) 
+### Further reading
+
+1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/)
 2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/) <--- you are here!
 3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/)
 4. [Nullness](https://jamie.sanson.dev/blog/android-then-and-n-caught-exception-nullpointerexception/)
