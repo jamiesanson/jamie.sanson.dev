@@ -77,6 +77,8 @@ All in all, memory usage is something most apps no longer have to pay too much a
 
 ***
 
+### Further reading
+
 1. [IntDefs and Enums](https://jamie.sanson.dev/blog/android-then-and-now-intro-intdef-enums/) <--- you are here!
 2. [Callbacks](https://jamie.sanson.dev/blog/android-then-and-now-callbacks/)
 3. [Navigation](https://jamie.sanson.dev/blog/android-then-and-now-navigation/)
