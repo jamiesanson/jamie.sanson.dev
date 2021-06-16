@@ -5,8 +5,6 @@ date: 2021-06-17T00:00:00+12:00
 hero_image: "/src/assets/content/images/stefan-cosma-0go3-b-5m80-unsplash.jpg"
 
 ---
-# Focus in Jetpack Compose
-
 It takes a mindset shift to really get going with Compose. When you start thinking in the right way, working with declarative UI is incredibly fast and rewarding. It takes time to train yourself out of old habits, relearning how to do things. Focus management is a little different in Compose versus what we’re used to in plain old Android, so let’s take a look!
 
 ## Setting the scene
