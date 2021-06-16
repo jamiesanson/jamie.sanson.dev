@@ -58,14 +58,10 @@ What if you want `Down` to mean something other than the next element on the lis
 
 You can interact with the focus mechanisms in Compose through a few different modifiers
 
-* `Modifier.focusTarget()`
-  This allows you to make the component focusable
-* `Modifier.focusOrder()`
-  In combination with `FocusRequester`s, this allows you to change the focus order
-* `Modifier.focusRequester()`
-  Add a custom `FocusRequester`, allowing you to observe focus state, and request focus for individual components
-* `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()`
-  Easier way to observe internal, or actual changes to focus state
+* `Modifier.focusTarget()` - This allows you to make the component focusable
+* `Modifier.focusOrder()` - In combination with `FocusRequester`s, this allows you to change the focus order
+* `Modifier.focusRequester()` - Add a custom `FocusRequester`, allowing you to observe focus state, and request focus for individual components
+* `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` - Easier way to observe internal, or actual changes to focus state
 
 To understand how these work, let’s look at some examples.
 
@@ -97,9 +93,9 @@ When implementing a custom composable, you may it to be focusable for interactiv
 ```kt
 @Composable
 fun CoolFocusableGraph(modifier: Modifier = Modifier) {
-	// Make ensure our laid out component is focusable, and 
+    // Make ensure our laid out component is focusable, and 
     // observe focus events to make it interactive
-	val customComponentModifier = modifier
+    val customComponentModifier = modifier
             .focusTarget() // Now focusable!
             .onFocusEvent { TODO("React to events") }
             .drawBehind { TODO("Draw something cool") }
@@ -108,7 +104,7 @@ fun CoolFocusableGraph(modifier: Modifier = Modifier) {
         content = {},
         modifier = customComponentModifier,
         measurePolicy = TODO()
-)
+    )
 }
 ```
 
@@ -127,7 +123,7 @@ Column {
         modifier = Modifier.focusOrder(first) { down = second }
     )
 
-	// Skip this one when moving in the "down" direction
+    // Skip this one when moving in the "down" direction
     TextField(...)
 
     // Set the requester to tie them together
